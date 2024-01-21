@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic-Tac-Toe</title>
+    <link href="body.css" rel="stylesheet">
+    <script src="TicTacTo.js" defer></script>
+</head>
+<body>
+    <!-- Füge ein verstecktes Input-Feld hinzu, um den Namen des Spielers zu speichern -->
+    <input type="hidden" id="playerName">
+
+    <p class="spielanzeige">Das ist Platzhaltertext</p>
+    <div class="spielfeld">
+        <button class="feld"></button>
+        <button class="feld"></button>
+        <button class="feld"></button>
+        <button class="feld"></button>
+        <button class="feld"></button>
+        <button class="feld"></button>
+        <button class="feld"></button>
+        <button class="feld"></button>
+        <button class="feld"></button>
+    </div>
+    <div class="overlay">
+        <!-- Verwende JavaScript, um den Namen des Spielers dynamisch zu setzen -->
+        <p class="overlay-text">Willkommen, <span id="displayedPlayerName"></span>! Das ist Platzhaltertext</p>
+        <button class="overlay-button">Nochmal spielen!</button>
+    </div>
+
+    <script>
+        // Hole den Namen des Spielers aus dem Session Storage
+        var playerName = sessionStorage.getItem("playerName");
+
+        // Überprüfe, ob der Spielername existiert, andernfalls frage ihn ab
+        if (!playerName) {
+            playerName = prompt("Bitte gib deinen Namen ein:");
+            sessionStorage.setItem('playerName', playerName);
+        }
+
+        // Setze den Namen des Spielers im versteckten Input-Feld
+        document.getElementById('playerName').value = playerName;
+
+        // Setze den Namen des Spielers im Overlay
+        getElementById('displayedPlayerName').innerText = playerName;
+    </script>
+</body>
+</html>
+
+

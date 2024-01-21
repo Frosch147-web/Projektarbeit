@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Mini-Spiele</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Willkommen zu unseren Mini-Spielen!</h1>
+        <form id="nameForm">
+            <input type="text" id="playerName" placeholder="Dein Name eingeben">
+        </form>
+        <div class="game-links">
+            <a class="game-link" onclick="savePlayerName()" href="file:///C:/Users/hendr/Desktop/Projektarbeit/TicTacTo/Index-Tic_Tac_To.html">Tic Tac To</a>
+            <a class="game-link" onclick="savePlayerName()" href="file:///C:/Users/hendr/Desktop/Projektarbeit/Snake/index.html">Snake</a>
+        </div>
+    </div>
+<script>
+    function savePlayerName(){
+        var playerName = sessionStorage.setItem('playerName', document.getElementById('playerName').value);
+    }
+</script>
+</body>
+</html>

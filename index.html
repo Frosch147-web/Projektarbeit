@@ -1,0 +1,20 @@
+<html> 
+  <head>
+    <title>Minigame Website</title> 
+    <link rel="stylesheet" href="style.css">
+  </head>
+
+  <body> 
+    <h1>Snake</h1> 
+    <div class="grid" id="container"></div><br>
+    <div class="score" id="score">Score: <span>0</span></div><br>
+    <label for="fname">Movement Speed:</label>
+    <input type="range" id="range" name="irange" min="200" max="1000" value="200"><br><br>
+    <dialog>
+      <text class="dialogText">Game Over</text><br>
+      <text class="dialogTextFurther" id="scoreDialog"></text><br>
+      <button onclick="restart()" class="restartButton">Restart</button>
+    </dialog>
+    <script type="text/javascript" src="script.js"></script>
+  </body>
+</html>
